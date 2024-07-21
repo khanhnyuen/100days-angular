@@ -1,0 +1,39 @@
+<app-hello></app-hello>
+<p> Danh sach user</p>
+<!-- $implicit
+    index
+    count
+    first
+    last
+    odd
+    even -->
+<ul>
+    <ng-container *ngIf="users.length > 0; else noUsers">
+        <li *ngFor="let u of users;index as index;count as total;even as isEven;odd as isOdd">
+        <!-- <span> {{u.name}} - {{u.id}} - {{u.phone}}</span>
+        <br>
+        <span> at index {{index}} out of - {{total}}</span>
+        <br>
+        <span *ngIf="isEven"> I am even number <br></span>
+        <span *ngIf="isOdd">I am odd number <br> </span>
+        <br> <br> -->
+        </li>
+    </ng-container>
+    <ng-template #noUsers>No Data Found You"</ng-template>
+</ul>
+
+<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">{{tag}}</button>
+
+<!-- <ul>
+    <ng-template ngFor [ngForOf]="users" let-u let-index="index" let-total="count" let-isOdd=""odd let-isEven="even">
+        <li *ngFor="let u of users;index as index;count as total;even as isEven;odd as isOdd">
+        <span> {{u.name}} - {{u.id}} - {{u.phone}}</span>
+        <br>
+        <span> at index {{index}} out of - {{total}}</span>
+        <br>
+        <span *ngIf="isEven"> I am even number <br></span>
+        <span *ngIf="isOdd">I am odd number <br> </span>
+        <br> <br>
+        </li>
+    </ng-template>
+</ul> -->

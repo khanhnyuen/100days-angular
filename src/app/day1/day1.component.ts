@@ -1,26 +1,22 @@
 import { Component, VERSION } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HelloComponent } from './hello/hello.component';
+import { HelloComponent } from '../hello/hello.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Day1Component } from "./day1/day1.component";
-import { Day5Component } from "./day5/day5.component";
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-day1',
   standalone: true,
   imports: [
     RouterOutlet,
     HelloComponent,
     FormsModule,
-    CommonModule,
-    Day1Component,
-    Day5Component
-],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    CommonModule
+  ], 
+  templateUrl: './day1.component.html',
+  styleUrl: './day1.component.css'
 })
-export class AppComponent {
+export class Day1Component {
   name = 'Angular '+ VERSION.major;
   inputType = 'text';
   show =false;
